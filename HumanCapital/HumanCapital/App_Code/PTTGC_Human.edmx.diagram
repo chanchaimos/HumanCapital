@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="825542aba8ce4896ab89d11bed745320" Name="Diagram1">
+        <EntityTypeShape EntityType="PTTGC_Human.T_Course" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="PTTGC_Human.T_Course_Sub" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="PTTGC_Human.T_Course_Sub_TG" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="PTTGC_Human.T_Project" Width="1.5" PointX="4.75" PointY="3.75" />
+        <EntityTypeShape EntityType="PTTGC_Human.T_Project_Course" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="PTTGC_Human.T_Report_File" Width="1.5" PointX="0.75" PointY="6.75" />
+        <EntityTypeShape EntityType="PTTGC_Human.T_Report_Year" Width="1.5" PointX="6.75" PointY="3.75" />
+        <EntityTypeShape EntityType="PTTGC_Human.T_Report_Year_Item" Width="1.5" PointX="6.75" PointY="6.75" />
+        <EntityTypeShape EntityType="PTTGC_Human.T_ReportDJSI" Width="1.5" PointX="8.75" PointY="0.75" />
+        <EntityTypeShape EntityType="PTTGC_Human.T_ReportDJSI_Approve" Width="1.5" PointX="8.75" PointY="5.75" />
+        <EntityTypeShape EntityType="PTTGC_Human.T_ReportDJSI_Item" Width="1.5" PointX="8.75" PointY="8.75" />
+        <EntityTypeShape EntityType="PTTGC_Human.TB_Company" Width="1.5" PointX="0.75" PointY="9.75" />
+        <EntityTypeShape EntityType="PTTGC_Human.TB_Company_DJSI" Width="1.5" PointX="2.75" PointY="9.75" />
+        <EntityTypeShape EntityType="PTTGC_Human.TB_Sync" Width="1.5" PointX="4.75" PointY="9.75" />
+        <EntityTypeShape EntityType="PTTGC_Human.TB_Sync_Item" Width="1.5" PointX="10.75" PointY="0.75" />
+        <EntityTypeShape EntityType="PTTGC_Human.TB_User" Width="1.5" PointX="10.75" PointY="3.75" />
+        <EntityTypeShape EntityType="PTTGC_Human.TB_User_Company" Width="1.5" PointX="10.75" PointY="8.75" />
+        <EntityTypeShape EntityType="PTTGC_Human.TB_User_Permission" Width="1.5" PointX="10.75" PointY="11.75" />
+        <EntityTypeShape EntityType="PTTGC_Human.TM_DJSI" Width="1.5" PointX="12.75" PointY="0.75" />
+        <EntityTypeShape EntityType="PTTGC_Human.TM_Log" Width="1.5" PointX="2.75" PointY="12.75" />
+        <EntityTypeShape EntityType="PTTGC_Human.TM_Log_SyncDJSI" Width="1.5" PointX="12.75" PointY="4.75" />
+        <EntityTypeShape EntityType="PTTGC_Human.TM_LogMail" Width="1.5" PointX="4.75" PointY="12.75" />
+        <EntityTypeShape EntityType="PTTGC_Human.TM_MasterData" Width="1.5" PointX="6.75" PointY="12.75" />
+        <EntityTypeShape EntityType="PTTGC_Human.TM_MasterData_Sub" Width="1.5" PointX="12.75" PointY="7.75" />
+        <EntityTypeShape EntityType="PTTGC_Human.TM_Menu" Width="1.5" PointX="12.75" PointY="11.75" />
+        <EntityTypeShape EntityType="PTTGC_Human.TM_WFStatus" Width="1.5" PointX="14.75" PointY="0.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

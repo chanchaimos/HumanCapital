@@ -1,0 +1,32 @@
+﻿.panel, .panel-heading, .panel-footer, .panel-group .panel {
+    border-radius: 0;
+}
+
+    .panel > .list-group:first-child .list-group-item:first-child, .panel > .panel-collapse > .list-group:first-child .list-group-item:first-child,
+    .panel > .list-group:last-child .list-group-item:last-child, .panel > .panel-collapse > .list-group:last-child .list-group-item:last-child {
+        border-radius: 0;
+    }
+
+.form-control, .form-group-sm .form-control, .form-group-lg .form-control {
+    border-radius: 0;
+}
+
+.btn, .alert {
+    border-radius: 0;
+}
+
+.input-group-addon {
+    border-radius: 0;
+}
+
+.datepicker.dropdown-menu {
+    border-radius: 0 !important;
+}
+
+.modal-content {
+    border-radius: 0;
+}
+
+.nav-tabs > li > a {
+    border-radius: 0;
+}

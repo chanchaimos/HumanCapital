@@ -1,0 +1,10 @@
+[17:30:12] :: 
+Error Message: Object reference not set to an instance of an object.
+Stack Trace:    at _test.Page_Load(Object sender, EventArgs e) in c:\inetpub\wwwroot\PTTGC_HumanCapital\_test.aspx.cs:line 32
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+ 
+*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************
+

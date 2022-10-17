@@ -1,0 +1,140 @@
+No.,Year,Month,Company,Level,Age,Personal Area,Gender,Value
+1.,2020,2,GCO,Employee (Level 7 and Below),<30,Other Province,Male,38
+2.,2020,2,GCO,Employee (Level 7 and Below),<30,Other Province,Female,4
+3.,2020,2,GCO,Middle management (Level 10-12),<30,Other Province,Female,1
+4.,2020,2,GCO,Middle management (Level 10-12),30-50 years,Other Province,Male,1
+5.,2020,2,GCO,Senior (Level 8-9),<30,Other Province,Male,7
+6.,2020,2,GCO,Senior (Level 8-9),<30,Other Province,Female,1
+7.,2020,2,GCP,Employee (Level 7 and Below),<30,Other Province,Male,57
+8.,2020,2,GCP,Employee (Level 7 and Below),<30,Other Province,Female,5
+9.,2020,2,GCP,Middle management (Level 10-12),<30,Other Province,Male,3
+10.,2020,2,GCP,Middle management (Level 10-12),<30,Other Province,Female,2
+11.,2020,2,GCP,Middle management (Level 10-12),30-50 years,Other Province,Male,1
+12.,2020,2,GCP,Middle management (Level 10-12),30-50 years,Other Province,Female,1
+13.,2020,2,GCP,Senior (Level 8-9),<30,Other Province,Male,16
+14.,2020,2,GCP,Senior (Level 8-9),<30,Other Province,Female,5
+15.,2020,2,GCP,Senior (Level 8-9),30-50 years,Other Province,Male,1
+16.,2020,2,GCTC,Employee (Level 7 and Below),<30,Other Province,Female,5
+17.,2020,2,GCTC,Middle management (Level 10-12),<30,Other Province,Female,2
+18.,2020,2,GCTC,Middle management (Level 10-12),30-50 years,Other Province,Female,1
+19.,2020,2,GCTC,Senior (Level 8-9),<30,Other Province,Female,1
+20.,2020,2,GCTC,Senior (Level 8-9),30-50 years,Other Province,Female,1
+21.,2020,2,GGC,Employee (Level 7 and Below),<30,GGC – Bangkok,Male,6
+22.,2020,2,GGC,Employee (Level 7 and Below),<30,GGC – Bangkok,Female,16
+23.,2020,2,GGC,Employee (Level 7 and Below),<30,GGC – Rayong,Male,111
+24.,2020,2,GGC,Employee (Level 7 and Below),<30,GGC – Rayong,Female,16
+25.,2020,2,GGC,Employee (Level 7 and Below),30-50 years,GGC – Rayong,Male,2
+26.,2020,2,GGC,Employee (Level 7 and Below),30-50 years,GGC – Rayong,Female,1
+27.,2020,2,GGC,Employee (Level 7 and Below),<30,GGC – Rayong,Male,1
+28.,2020,2,GGC,Middle management (Level 10-12),<30,GGC – Bangkok,Male,3
+29.,2020,2,GGC,Middle management (Level 10-12),<30,GGC – Bangkok,Female,2
+30.,2020,2,GGC,Middle management (Level 10-12),<30,GGC – Rayong,Male,10
+31.,2020,2,GGC,Middle management (Level 10-12),<30,GGC – Rayong,Female,4
+32.,2020,2,GGC,Middle management (Level 10-12),30-50 years,GGC – Bangkok,Female,1
+33.,2020,2,GGC,Middle management (Level 10-12),30-50 years,GGC – Rayong,Male,4
+34.,2020,2,GGC,Middle management (Level 10-12),<30,GGC – Rayong,Male,3
+35.,2020,2,GGC,Middle management (Level 10-12),30-50 years,GGC – Rayong,Male,1
+36.,2020,2,GGC,Senior (Level 8-9),<30,GGC – Bangkok,Male,3
+37.,2020,2,GGC,Senior (Level 8-9),<30,GGC – Bangkok,Female,13
+38.,2020,2,GGC,Senior (Level 8-9),<30,GGC – Rayong,Male,12
+39.,2020,2,GGC,Senior (Level 8-9),<30,GGC – Rayong,Female,8
+40.,2020,2,GGC,Senior (Level 8-9),30-50 years,GGC – Rayong,Male,3
+41.,2020,2,GGC,Senior (Level 8-9),<30,GGC – Rayong,Male,2
+42.,2020,2,PPCL,Employee (Level 7 and Below),<30,PPCL – Bangkok,Male,2
+43.,2020,2,PPCL,Employee (Level 7 and Below),<30,PPCL – Bangkok,Female,6
+44.,2020,2,PPCL,Employee (Level 7 and Below),<30,PPCL – Rayong,Male,142
+45.,2020,2,PPCL,Employee (Level 7 and Below),<30,PPCL – Rayong,Female,5
+46.,2020,2,PPCL,Employee (Level 7 and Below),30-50 years,PPCL – Bangkok,Male,1
+47.,2020,2,PPCL,Middle management (Level 10-12),<30,PPCL – Bangkok,Female,1
+48.,2020,2,PPCL,Middle management (Level 10-12),<30,PPCL – Rayong,Male,13
+49.,2020,2,PPCL,Middle management (Level 10-12),30-50 years,PPCL – Rayong,Male,5
+50.,2020,2,PPCL,Senior (Level 8-9),<30,PPCL – Bangkok,Male,1
+51.,2020,2,PPCL,Senior (Level 8-9),<30,PPCL – Bangkok,Female,1
+52.,2020,2,PPCL,Senior (Level 8-9),<30,PPCL – Rayong,Male,30
+53.,2020,2,PPCL,Senior (Level 8-9),<30,PPCL – Rayong,Female,2
+54.,2020,2,PTTGC,Employee (Level 7 and Below),<30,PTTGC – Bangkok,Male,56
+55.,2020,2,PTTGC,Employee (Level 7 and Below),<30,PTTGC – Bangkok,Female,177
+56.,2020,2,PTTGC,Employee (Level 7 and Below),<30,PTTGC – Rayong,Male,1641
+57.,2020,2,PTTGC,Employee (Level 7 and Below),<30,PTTGC – Rayong,Female,403
+58.,2020,2,PTTGC,Employee (Level 7 and Below),<30,PTTGC – Rayong,unknown,1
+59.,2020,2,PTTGC,Employee (Level 7 and Below),30-50 years,PTTGC – Bangkok,Male,8
+60.,2020,2,PTTGC,Employee (Level 7 and Below),30-50 years,PTTGC – Bangkok,Female,14
+61.,2020,2,PTTGC,Employee (Level 7 and Below),30-50 years,PTTGC – Rayong,Male,183
+62.,2020,2,PTTGC,Employee (Level 7 and Below),30-50 years,PTTGC – Rayong,Female,39
+63.,2020,2,PTTGC,Employee (Level 7 and Below),<30,PTTGC – Bangkok,Female,2
+64.,2020,2,PTTGC,Employee (Level 7 and Below),<30,PTTGC – Rayong,Male,3
+65.,2020,2,PTTGC,Employee (Level 7 and Below),<30,PTTGC – Rayong,Female,1
+66.,2020,2,PTTGC,Employee (Level 7 and Below),30-50 years,PTTGC – Bangkok,Female,1
+67.,2020,2,PTTGC,Employee (Level 7 and Below),30-50 years,PTTGC – Rayong,Male,1
+68.,2020,2,PTTGC,Employee (Level 7 and Below),<30,PTTGC – Bangkok,Female,2
+69.,2020,2,PTTGC,Executive (Level 13-18),<30,PTTGC – Bangkok,Male,1
+70.,2020,2,PTTGC,Executive (Level 13-18),<30,PTTGC – Bangkok,Female,1
+71.,2020,2,PTTGC,Executive (Level 13-18),<30,PTTGC – Rayong,Male,1
+72.,2020,2,PTTGC,Executive (Level 13-18),30-50 years,PTTGC – Bangkok,Male,5
+73.,2020,2,PTTGC,Executive (Level 13-18),30-50 years,PTTGC – Bangkok,Female,3
+74.,2020,2,PTTGC,Executive (Level 13-18),30-50 years,PTTGC – Rayong,Male,11
+75.,2020,2,PTTGC,Executive (Level 13-18),30-50 years,PTTGC – Rayong,Female,2
+76.,2020,2,PTTGC,Executive (Level 13-18),<30,PTTGC – Bangkok,Male,1
+77.,2020,2,PTTGC,Executive (Level 13-18),<30,PTTGC – Bangkok,Female,1
+78.,2020,2,PTTGC,Executive (Level 13-18),30-50 years,PTTGC – Bangkok,Male,6
+79.,2020,2,PTTGC,Executive (Level 13-18),30-50 years,PTTGC – Bangkok,Female,1
+80.,2020,2,PTTGC,Executive (Level 13-18),30-50 years,PTTGC – Rayong,Male,4
+81.,2020,2,PTTGC,Executive (Level 13-18),30-50 years,PTTGC – Bangkok,Male,2
+82.,2020,2,PTTGC,Middle management (Level 10-12),<30,PTTGC – Bangkok,Male,48
+83.,2020,2,PTTGC,Middle management (Level 10-12),<30,PTTGC – Bangkok,Female,53
+84.,2020,2,PTTGC,Middle management (Level 10-12),<30,PTTGC – Rayong,Male,157
+85.,2020,2,PTTGC,Middle management (Level 10-12),<30,PTTGC – Rayong,Female,50
+86.,2020,2,PTTGC,Middle management (Level 10-12),30-50 years,PTTGC – Bangkok,Male,10
+87.,2020,2,PTTGC,Middle management (Level 10-12),30-50 years,PTTGC – Bangkok,Female,27
+88.,2020,2,PTTGC,Middle management (Level 10-12),30-50 years,PTTGC – Rayong,Male,178
+89.,2020,2,PTTGC,Middle management (Level 10-12),30-50 years,PTTGC – Rayong,Female,27
+90.,2020,2,PTTGC,Middle management (Level 10-12),<30,PTTGC – Bangkok,Male,10
+91.,2020,2,PTTGC,Middle management (Level 10-12),<30,PTTGC – Bangkok,Female,6
+92.,2020,2,PTTGC,Middle management (Level 10-12),<30,PTTGC – Rayong,Male,7
+93.,2020,2,PTTGC,Middle management (Level 10-12),<30,PTTGC – Rayong,Female,5
+94.,2020,2,PTTGC,Middle management (Level 10-12),30-50 years,PTTGC – Bangkok,Male,4
+95.,2020,2,PTTGC,Middle management (Level 10-12),30-50 years,PTTGC – Bangkok,Female,5
+96.,2020,2,PTTGC,Middle management (Level 10-12),30-50 years,PTTGC – Rayong,Male,17
+97.,2020,2,PTTGC,Middle management (Level 10-12),30-50 years,PTTGC – Rayong,Female,11
+98.,2020,2,PTTGC,Middle management (Level 10-12),<30,PTTGC – Bangkok,Female,1
+99.,2020,2,PTTGC,Middle management (Level 10-12),<30,PTTGC – Rayong,Male,1
+100.,2020,2,PTTGC,Middle management (Level 10-12),30-50 years,PTTGC – Bangkok,Male,1
+101.,2020,2,PTTGC,Middle management (Level 10-12),30-50 years,PTTGC – Rayong,Male,1
+102.,2020,2,PTTGC,Middle management (Level 10-12),<30,PTTGC – Bangkok,Male,1
+103.,2020,2,PTTGC,Middle management (Level 10-12),<30,PTTGC – Bangkok,Female,1
+104.,2020,2,PTTGC,Middle management (Level 10-12),<30,PTTGC – Rayong,Female,1
+105.,2020,2,PTTGC,Middle management (Level 10-12),30-50 years,PTTGC – Bangkok,Male,2
+106.,2020,2,PTTGC,Middle management (Level 10-12),30-50 years,PTTGC – Rayong,Male,3
+107.,2020,2,PTTGC,Senior (Level 8-9),<30,PTTGC – Bangkok,Male,57
+108.,2020,2,PTTGC,Senior (Level 8-9),<30,PTTGC – Bangkok,Female,105
+109.,2020,2,PTTGC,Senior (Level 8-9),<30,PTTGC – Rayong,Male,340
+110.,2020,2,PTTGC,Senior (Level 8-9),<30,PTTGC – Rayong,Female,167
+111.,2020,2,PTTGC,Senior (Level 8-9),30-50 years,PTTGC – Bangkok,Male,9
+112.,2020,2,PTTGC,Senior (Level 8-9),30-50 years,PTTGC – Bangkok,Female,20
+113.,2020,2,PTTGC,Senior (Level 8-9),30-50 years,PTTGC – Rayong,Male,210
+114.,2020,2,PTTGC,Senior (Level 8-9),30-50 years,PTTGC – Rayong,Female,25
+115.,2020,2,PTTGC,Senior (Level 8-9),<30,PTTGC – Bangkok,Male,3
+116.,2020,2,PTTGC,Senior (Level 8-9),<30,PTTGC – Rayong,Male,12
+117.,2020,2,PTTGC,Senior (Level 8-9),<30,PTTGC – Rayong,Female,2
+118.,2020,2,PTTGC,Senior (Level 8-9),30-50 years,PTTGC – Bangkok,Female,1
+119.,2020,2,PTTGC,Senior (Level 8-9),30-50 years,PTTGC – Rayong,Male,5
+120.,2020,2,PTTGC,Senior (Level 8-9),30-50 years,PTTGC – Rayong,Female,1
+121.,2020,2,PTTGC,Senior (Level 8-9),<30,PTTGC – Rayong,Male,1
+122.,2020,2,PTTGC,Senior (Level 8-9),<30,PTTGC – Bangkok,Male,1
+123.,2020,2,PTTGC,Senior (Level 8-9),<30,PTTGC – Bangkok,Female,4
+124.,2020,2,PTTGC,Senior (Level 8-9),<30,PTTGC – Rayong,Male,1
+125.,2020,2,TOCGC,Employee (Level 7 and Below),<30,TOCGC – Bangkok,Female,1
+126.,2020,2,TOCGC,Employee (Level 7 and Below),<30,TOCGC – Rayong,Male,68
+127.,2020,2,TOCGC,Employee (Level 7 and Below),<30,TOCGC – Rayong,Female,12
+128.,2020,2,TOCGC,Middle management (Level 10-12),<30,TOCGC – Bangkok,Male,1
+129.,2020,2,TOCGC,Middle management (Level 10-12),<30,TOCGC – Rayong,Male,3
+130.,2020,2,TOCGC,Middle management (Level 10-12),<30,TOCGC – Rayong,Female,3
+131.,2020,2,TOCGC,Middle management (Level 10-12),30-50 years,TOCGC – Rayong,Male,6
+132.,2020,2,TOCGC,Senior (Level 8-9),<30,TOCGC – Bangkok,Male,2
+133.,2020,2,TOCGC,Senior (Level 8-9),<30,TOCGC – Bangkok,Female,1
+134.,2020,2,TOCGC,Senior (Level 8-9),<30,TOCGC – Rayong,Male,16
+135.,2020,2,TOCGC,Senior (Level 8-9),<30,TOCGC – Rayong,Female,5
+136.,2020,2,TSCL,Employee (Level 7 and Below),<30,TSCL – Rayong,Male,3
+137.,2020,2,TSCL,Middle management (Level 10-12),<30,TSCL – Rayong,Male,1
+138.,2020,2,TSCL,Middle management (Level 10-12),<30,TSCL – Rayong,Female,1
+139.,2020,2,TSCL,Middle management (Level 10-12),30-50 years,TSCL – Rayong,Male,1

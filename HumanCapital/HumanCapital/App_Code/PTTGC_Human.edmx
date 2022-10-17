@@ -1,0 +1,1135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="PTTGC_Human.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="T_Course">
+          <Key>
+            <PropertyRef Name="nCourseID" />
+          </Key>
+          <Property Name="nCourseID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nCompanyID" Type="int" Nullable="false" />
+          <Property Name="sName" Type="varchar" MaxLength="250" />
+          <Property Name="sDescription" Type="varchar(max)" />
+          <Property Name="nCategoryID" Type="int" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="IsDel" Type="bit" Nullable="false" />
+          <Property Name="nCreateBy" Type="int" Nullable="false" />
+          <Property Name="dCreate" Type="datetime" Nullable="false" />
+          <Property Name="nUpdateBy" Type="int" Nullable="false" />
+          <Property Name="dUpdate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="T_Course_Sub">
+          <Key>
+            <PropertyRef Name="nCourseSubID" />
+          </Key>
+          <Property Name="nCourseSubID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nCourseID" Type="int" Nullable="false" />
+          <Property Name="nCompanyID" Type="int" Nullable="false" />
+          <Property Name="sName" Type="varchar" MaxLength="250" />
+          <Property Name="sDescription" Type="varchar(max)" />
+          <Property Name="dStart" Type="date" />
+          <Property Name="dEnd" Type="date" />
+          <Property Name="tStart" Type="time" Precision="7" />
+          <Property Name="tEnd" Type="time" Precision="7" />
+          <Property Name="nTraining_method" Type="int" />
+          <Property Name="nPrice" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="nAmount" Type="int" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="IsDel" Type="bit" Nullable="false" />
+          <Property Name="nCreateBy" Type="int" Nullable="false" />
+          <Property Name="dCreate" Type="datetime" Nullable="false" />
+          <Property Name="nUpdateBy" Type="int" Nullable="false" />
+          <Property Name="dUpdate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="T_Course_Sub_TG">
+          <Key>
+            <PropertyRef Name="nCourseSubID" />
+            <PropertyRef Name="nTargetGroup" />
+          </Key>
+          <Property Name="nCourseSubID" Type="int" Nullable="false" />
+          <Property Name="nTargetGroup" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="T_Project">
+          <Key>
+            <PropertyRef Name="nProjectID" />
+          </Key>
+          <Property Name="nProjectID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nCompanyID" Type="int" />
+          <Property Name="sProjectName" Type="varchar" MaxLength="250" />
+          <Property Name="sOrganization" Type="varchar" MaxLength="250" />
+          <Property Name="sObjective" Type="varchar(max)" />
+          <Property Name="nProductivity" Type="int" />
+          <Property Name="nReturn_Economy" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="nReturn_Environment" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="nReturn_Social" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="nReturn_Other" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="nPrice_Opex" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="nPrice_Capex" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="sDescription" Type="varchar(max)" />
+          <Property Name="dStart" Type="date" />
+          <Property Name="dEnd" Type="date" />
+          <Property Name="nCourse" Type="int" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="IsDel" Type="bit" Nullable="false" />
+          <Property Name="nCreateBy" Type="int" Nullable="false" />
+          <Property Name="dCreate" Type="datetime" Nullable="false" />
+          <Property Name="nUpdateBy" Type="int" Nullable="false" />
+          <Property Name="dUpdate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="T_Project_Course">
+          <Key>
+            <PropertyRef Name="nProjectID" />
+            <PropertyRef Name="nCourseSubID" />
+          </Key>
+          <Property Name="nProjectID" Type="int" Nullable="false" />
+          <Property Name="nCourseSubID" Type="int" Nullable="false" />
+          <Property Name="nBenefit" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="T_Report_File">
+          <Key>
+            <PropertyRef Name="nReportID" />
+            <PropertyRef Name="nItem" />
+          </Key>
+          <Property Name="nReportID" Type="int" Nullable="false" />
+          <Property Name="nItem" Type="int" Nullable="false" />
+          <Property Name="sFilename" Type="varchar" MaxLength="250" />
+          <Property Name="sSysFileName" Type="varchar" MaxLength="250" />
+          <Property Name="sPath" Type="varchar" MaxLength="250" />
+          <Property Name="sDescription" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="T_Report_Year">
+          <Key>
+            <PropertyRef Name="nReportID" />
+          </Key>
+          <Property Name="nReportID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nCompanyID" Type="int" Nullable="false" />
+          <Property Name="nYear" Type="int" Nullable="false" />
+          <Property Name="dUpdate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="T_Report_Year_Item">
+          <Key>
+            <PropertyRef Name="nReportID" />
+            <PropertyRef Name="nItem" />
+          </Key>
+          <Property Name="nReportID" Type="int" Nullable="false" />
+          <Property Name="nItem" Type="int" Nullable="false" />
+          <Property Name="nMale" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="nFemale" Type="decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="T_ReportDJSI">
+          <Key>
+            <PropertyRef Name="nReportID" />
+          </Key>
+          <Property Name="nReportID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nCompanyID" Type="int" Nullable="false" />
+          <Property Name="nQuarter" Type="int" Nullable="false" />
+          <Property Name="nYear" Type="int" Nullable="false" />
+          <Property Name="sFilename" Type="varchar" MaxLength="250" />
+          <Property Name="sSysFileName" Type="varchar" MaxLength="250" />
+          <Property Name="sPath" Type="varchar" MaxLength="250" />
+          <Property Name="nStatusID" Type="int" Nullable="false" />
+          <Property Name="nL1" Type="int" />
+          <Property Name="nL2" Type="int" />
+          <Property Name="IsDel" Type="bit" Nullable="false" />
+          <Property Name="nCreateBy" Type="int" Nullable="false" />
+          <Property Name="dCreate" Type="datetime" Nullable="false" />
+          <Property Name="nUpdateBy" Type="int" Nullable="false" />
+          <Property Name="dUpdate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="T_ReportDJSI_Approve">
+          <Key>
+            <PropertyRef Name="nID" />
+          </Key>
+          <Property Name="nID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nReportID" Type="int" Nullable="false" />
+          <Property Name="nStatusID" Type="int" />
+          <Property Name="sComment" Type="varchar(max)" />
+          <Property Name="nActionBy" Type="int" />
+          <Property Name="dAction" Type="datetime" />
+        </EntityType>
+        <EntityType Name="T_ReportDJSI_Item">
+          <Key>
+            <PropertyRef Name="nReportID" />
+            <PropertyRef Name="nItem" />
+          </Key>
+          <Property Name="nReportID" Type="int" Nullable="false" />
+          <Property Name="nItem" Type="int" Nullable="false" />
+          <Property Name="nMale_1" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="nMale_2" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="nMale_3" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="nFemale_1" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="nFemale_2" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="nFemale_3" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="nMale_Total" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="nFemale_Total" Type="decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="TB_Company">
+          <Key>
+            <PropertyRef Name="nCompanyID" />
+          </Key>
+          <Property Name="nCompanyID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nCompanyType" Type="int" Nullable="false" />
+          <Property Name="sCompanyCode" Type="varchar" MaxLength="5" />
+          <Property Name="sCompanyName" Type="varchar" MaxLength="250" />
+          <Property Name="sCompanyAbbr" Type="varchar" MaxLength="20" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="IsSync" Type="bit" />
+          <Property Name="IsDel" Type="bit" Nullable="false" />
+          <Property Name="nCreateBy" Type="int" Nullable="false" />
+          <Property Name="dCreate" Type="datetime" Nullable="false" />
+          <Property Name="nUpdateBy" Type="int" Nullable="false" />
+          <Property Name="dUpdate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TB_Company_DJSI">
+          <Key>
+            <PropertyRef Name="nCompanyID" />
+            <PropertyRef Name="nItem" />
+          </Key>
+          <Property Name="nCompanyID" Type="int" Nullable="false" />
+          <Property Name="nItem" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TB_Sync">
+          <Key>
+            <PropertyRef Name="nID" />
+          </Key>
+          <Property Name="nID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="sSysFileName" Type="varchar" MaxLength="250" />
+          <Property Name="sPath" Type="varchar" MaxLength="250" />
+          <Property Name="nCreateBy" Type="int" Nullable="false" />
+          <Property Name="dCreate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TB_Sync_Item">
+          <Key>
+            <PropertyRef Name="nID" />
+            <PropertyRef Name="nCompanyID" />
+            <PropertyRef Name="dDate" />
+            <PropertyRef Name="nItem" />
+          </Key>
+          <Property Name="nID" Type="int" Nullable="false" />
+          <Property Name="nCompanyID" Type="int" Nullable="false" />
+          <Property Name="dDate" Type="date" Nullable="false" />
+          <Property Name="nItem" Type="int" Nullable="false" />
+          <Property Name="nMale" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="nFemale" Type="decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="TB_User">
+          <Key>
+            <PropertyRef Name="nUserID" />
+          </Key>
+          <Property Name="nUserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="sUserID" Type="varchar" MaxLength="20" />
+          <Property Name="sPassword" Type="nvarchar" MaxLength="500" />
+          <Property Name="sPasswordEncrypt" Type="nvarchar" MaxLength="500" />
+          <Property Name="sFirstname" Type="nvarchar" MaxLength="100" />
+          <Property Name="sLastname" Type="nvarchar" MaxLength="100" />
+          <Property Name="sEmail" Type="nvarchar" MaxLength="40" />
+          <Property Name="nCompanyType" Type="int" Nullable="false" />
+          <Property Name="nRole" Type="int" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="IsDel" Type="bit" Nullable="false" />
+          <Property Name="nCreateBy" Type="int" Nullable="false" />
+          <Property Name="dCreate" Type="datetime" Nullable="false" />
+          <Property Name="nUpdateBy" Type="int" Nullable="false" />
+          <Property Name="dUpdate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TB_User_Company">
+          <Key>
+            <PropertyRef Name="nUserID" />
+            <PropertyRef Name="nCompanyID" />
+          </Key>
+          <Property Name="nUserID" Type="int" Nullable="false" />
+          <Property Name="nCompanyID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TB_User_Permission">
+          <Key>
+            <PropertyRef Name="nUserID" />
+            <PropertyRef Name="nMenuID" />
+          </Key>
+          <Property Name="nUserID" Type="int" Nullable="false" />
+          <Property Name="nMenuID" Type="int" Nullable="false" />
+          <Property Name="nPermission" Type="int" />
+        </EntityType>
+        <EntityType Name="TM_DJSI">
+          <Key>
+            <PropertyRef Name="nItem" />
+          </Key>
+          <Property Name="nItem" Type="int" Nullable="false" />
+          <Property Name="sName" Type="nvarchar" MaxLength="250" />
+          <Property Name="nItemHead" Type="int" />
+          <Property Name="nSibling" Type="int" />
+          <Property Name="IsTotal" Type="bit" />
+          <Property Name="nUnit" Type="int" />
+          <Property Name="IsHead" Type="bit" />
+          <Property Name="IsAutoCal" Type="bit" />
+        </EntityType>
+        <EntityType Name="TM_Log">
+          <Key>
+            <PropertyRef Name="nLogID" />
+          </Key>
+          <Property Name="nLogID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="dLog" Type="datetime" />
+          <Property Name="nUserID" Type="int" />
+          <Property Name="nMenuID" Type="int" />
+          <Property Name="sMenuName" Type="varchar" MaxLength="50" />
+          <Property Name="sEvent" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="TM_Log_SyncDJSI">
+          <Key>
+            <PropertyRef Name="nLogID" />
+          </Key>
+          <Property Name="nLogID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="dLog" Type="datetime" Nullable="false" />
+          <Property Name="sEvent" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="TM_LogMail">
+          <Key>
+            <PropertyRef Name="nID" />
+          </Key>
+          <Property Name="nID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="sTo" Type="varchar" MaxLength="500" />
+          <Property Name="sCc" Type="varchar" MaxLength="500" />
+          <Property Name="sSubject" Type="varchar" MaxLength="250" />
+          <Property Name="sMessage" Type="varchar(max)" />
+          <Property Name="IsSend" Type="bit" />
+          <Property Name="sMessage_Error" Type="varchar" MaxLength="500" />
+          <Property Name="dSend" Type="datetime" />
+        </EntityType>
+        <EntityType Name="TM_MasterData">
+          <Key>
+            <PropertyRef Name="nMainID" />
+          </Key>
+          <Property Name="nMainID" Type="int" Nullable="false" />
+          <Property Name="sName" Type="varchar" MaxLength="50" />
+          <Property Name="sDescription" Type="varchar" MaxLength="50" />
+          <Property Name="IsManage" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TM_MasterData_Sub">
+          <Key>
+            <PropertyRef Name="nSubID" />
+          </Key>
+          <Property Name="nSubID" Type="int" Nullable="false" />
+          <Property Name="nMainID" Type="int" Nullable="false" />
+          <Property Name="sName" Type="varchar" MaxLength="250" />
+          <Property Name="sDescription" Type="nvarchar" MaxLength="2000" />
+          <Property Name="nOrder" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="IsDel" Type="bit" Nullable="false" />
+          <Property Name="nCreateBy" Type="int" />
+          <Property Name="dCreate" Type="datetime" />
+          <Property Name="nUpdateBy" Type="int" />
+          <Property Name="dUpdate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="TM_Menu">
+          <Key>
+            <PropertyRef Name="nMenuID" />
+          </Key>
+          <Property Name="nMenuID" Type="int" Nullable="false" />
+          <Property Name="sMenuName" Type="varchar" MaxLength="100" />
+          <Property Name="nMenuHead" Type="int" />
+          <Property Name="nLevel" Type="int" />
+          <Property Name="sMenuLink" Type="varchar" MaxLength="100" />
+          <Property Name="sIcon" Type="varchar" MaxLength="50" />
+          <Property Name="nMenuOrder" Type="int" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TM_WFStatus">
+          <Key>
+            <PropertyRef Name="nStatusID" />
+          </Key>
+          <Property Name="nStatusID" Type="int" Nullable="false" />
+          <Property Name="sStatusName" Type="varchar" MaxLength="150" />
+          <Property Name="sStatusNameAbbr" Type="varchar" MaxLength="50" />
+          <Property Name="sDescription" Type="varchar" MaxLength="150" />
+          <Property Name="nLevel" Type="int" Nullable="false" />
+          <Property Name="sColor" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityContainer Name="PTTGC_HumanStoreContainer">
+          <EntitySet Name="T_Course" EntityType="Self.T_Course" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_Course_Sub" EntityType="Self.T_Course_Sub" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_Course_Sub_TG" EntityType="Self.T_Course_Sub_TG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_Project" EntityType="Self.T_Project" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_Project_Course" EntityType="Self.T_Project_Course" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_Report_File" EntityType="Self.T_Report_File" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_Report_Year" EntityType="Self.T_Report_Year" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_Report_Year_Item" EntityType="Self.T_Report_Year_Item" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_ReportDJSI" EntityType="Self.T_ReportDJSI" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_ReportDJSI_Approve" EntityType="Self.T_ReportDJSI_Approve" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_ReportDJSI_Item" EntityType="Self.T_ReportDJSI_Item" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_Company" EntityType="Self.TB_Company" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_Company_DJSI" EntityType="Self.TB_Company_DJSI" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_Sync" EntityType="Self.TB_Sync" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_Sync_Item" EntityType="Self.TB_Sync_Item" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_User" EntityType="Self.TB_User" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_User_Company" EntityType="Self.TB_User_Company" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_User_Permission" EntityType="Self.TB_User_Permission" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TM_DJSI" EntityType="Self.TM_DJSI" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TM_Log" EntityType="Self.TM_Log" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TM_Log_SyncDJSI" EntityType="Self.TM_Log_SyncDJSI" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TM_LogMail" EntityType="Self.TM_LogMail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TM_MasterData" EntityType="Self.TM_MasterData" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TM_MasterData_Sub" EntityType="Self.TM_MasterData_Sub" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TM_Menu" EntityType="Self.TM_Menu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TM_WFStatus" EntityType="Self.TM_WFStatus" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PTTGC_Human" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="PTTGC_HumanEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="T_Course" EntityType="PTTGC_Human.T_Course" />
+          <EntitySet Name="T_Course_Sub" EntityType="PTTGC_Human.T_Course_Sub" />
+          <EntitySet Name="T_Course_Sub_TG" EntityType="PTTGC_Human.T_Course_Sub_TG" />
+          <EntitySet Name="T_Project" EntityType="PTTGC_Human.T_Project" />
+          <EntitySet Name="T_Project_Course" EntityType="PTTGC_Human.T_Project_Course" />
+          <EntitySet Name="T_Report_File" EntityType="PTTGC_Human.T_Report_File" />
+          <EntitySet Name="T_Report_Year" EntityType="PTTGC_Human.T_Report_Year" />
+          <EntitySet Name="T_Report_Year_Item" EntityType="PTTGC_Human.T_Report_Year_Item" />
+          <EntitySet Name="T_ReportDJSI" EntityType="PTTGC_Human.T_ReportDJSI" />
+          <EntitySet Name="T_ReportDJSI_Approve" EntityType="PTTGC_Human.T_ReportDJSI_Approve" />
+          <EntitySet Name="T_ReportDJSI_Item" EntityType="PTTGC_Human.T_ReportDJSI_Item" />
+          <EntitySet Name="TB_Company" EntityType="PTTGC_Human.TB_Company" />
+          <EntitySet Name="TB_Company_DJSI" EntityType="PTTGC_Human.TB_Company_DJSI" />
+          <EntitySet Name="TB_Sync" EntityType="PTTGC_Human.TB_Sync" />
+          <EntitySet Name="TB_Sync_Item" EntityType="PTTGC_Human.TB_Sync_Item" />
+          <EntitySet Name="TB_User" EntityType="PTTGC_Human.TB_User" />
+          <EntitySet Name="TB_User_Company" EntityType="PTTGC_Human.TB_User_Company" />
+          <EntitySet Name="TB_User_Permission" EntityType="PTTGC_Human.TB_User_Permission" />
+          <EntitySet Name="TM_DJSI" EntityType="PTTGC_Human.TM_DJSI" />
+          <EntitySet Name="TM_Log" EntityType="PTTGC_Human.TM_Log" />
+          <EntitySet Name="TM_Log_SyncDJSI" EntityType="PTTGC_Human.TM_Log_SyncDJSI" />
+          <EntitySet Name="TM_LogMail" EntityType="PTTGC_Human.TM_LogMail" />
+          <EntitySet Name="TM_MasterData" EntityType="PTTGC_Human.TM_MasterData" />
+          <EntitySet Name="TM_MasterData_Sub" EntityType="PTTGC_Human.TM_MasterData_Sub" />
+          <EntitySet Name="TM_Menu" EntityType="PTTGC_Human.TM_Menu" />
+          <EntitySet Name="TM_WFStatus" EntityType="PTTGC_Human.TM_WFStatus" />
+        </EntityContainer>
+        <EntityType Name="T_Course">
+          <Key>
+            <PropertyRef Name="nCourseID" />
+          </Key>
+          <Property Name="nCourseID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nCompanyID" Type="Int32" Nullable="false" />
+          <Property Name="sName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="sDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="nCategoryID" Type="Int32" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="IsDel" Type="Boolean" Nullable="false" />
+          <Property Name="nCreateBy" Type="Int32" Nullable="false" />
+          <Property Name="dCreate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="nUpdateBy" Type="Int32" Nullable="false" />
+          <Property Name="dUpdate" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="T_Course_Sub">
+          <Key>
+            <PropertyRef Name="nCourseSubID" />
+          </Key>
+          <Property Name="nCourseSubID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nCourseID" Type="Int32" Nullable="false" />
+          <Property Name="nCompanyID" Type="Int32" Nullable="false" />
+          <Property Name="sName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="sDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="dStart" Type="DateTime" Precision="0" />
+          <Property Name="dEnd" Type="DateTime" Precision="0" />
+          <Property Name="tStart" Type="Time" Precision="7" />
+          <Property Name="tEnd" Type="Time" Precision="7" />
+          <Property Name="nTraining_method" Type="Int32" />
+          <Property Name="nPrice" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="nAmount" Type="Int32" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="IsDel" Type="Boolean" Nullable="false" />
+          <Property Name="nCreateBy" Type="Int32" Nullable="false" />
+          <Property Name="dCreate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="nUpdateBy" Type="Int32" Nullable="false" />
+          <Property Name="dUpdate" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="T_Course_Sub_TG">
+          <Key>
+            <PropertyRef Name="nCourseSubID" />
+            <PropertyRef Name="nTargetGroup" />
+          </Key>
+          <Property Name="nCourseSubID" Type="Int32" Nullable="false" />
+          <Property Name="nTargetGroup" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="T_Project">
+          <Key>
+            <PropertyRef Name="nProjectID" />
+          </Key>
+          <Property Name="nProjectID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nCompanyID" Type="Int32" />
+          <Property Name="sProjectName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="sOrganization" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="sObjective" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="nProductivity" Type="Int32" />
+          <Property Name="nReturn_Economy" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="nReturn_Environment" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="nReturn_Social" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="nReturn_Other" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="nPrice_Opex" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="nPrice_Capex" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="sDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="dStart" Type="DateTime" Precision="0" />
+          <Property Name="dEnd" Type="DateTime" Precision="0" />
+          <Property Name="nCourse" Type="Int32" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="IsDel" Type="Boolean" Nullable="false" />
+          <Property Name="nCreateBy" Type="Int32" Nullable="false" />
+          <Property Name="dCreate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="nUpdateBy" Type="Int32" Nullable="false" />
+          <Property Name="dUpdate" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="T_Project_Course">
+          <Key>
+            <PropertyRef Name="nProjectID" />
+            <PropertyRef Name="nCourseSubID" />
+          </Key>
+          <Property Name="nProjectID" Type="Int32" Nullable="false" />
+          <Property Name="nCourseSubID" Type="Int32" Nullable="false" />
+          <Property Name="nBenefit" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="T_Report_File">
+          <Key>
+            <PropertyRef Name="nReportID" />
+            <PropertyRef Name="nItem" />
+          </Key>
+          <Property Name="nReportID" Type="Int32" Nullable="false" />
+          <Property Name="nItem" Type="Int32" Nullable="false" />
+          <Property Name="sFilename" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="sSysFileName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="sPath" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="sDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="T_Report_Year">
+          <Key>
+            <PropertyRef Name="nReportID" />
+          </Key>
+          <Property Name="nReportID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nCompanyID" Type="Int32" Nullable="false" />
+          <Property Name="nYear" Type="Int32" Nullable="false" />
+          <Property Name="dUpdate" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="T_Report_Year_Item">
+          <Key>
+            <PropertyRef Name="nReportID" />
+            <PropertyRef Name="nItem" />
+          </Key>
+          <Property Name="nReportID" Type="Int32" Nullable="false" />
+          <Property Name="nItem" Type="Int32" Nullable="false" />
+          <Property Name="nMale" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="nFemale" Type="Decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="T_ReportDJSI">
+          <Key>
+            <PropertyRef Name="nReportID" />
+          </Key>
+          <Property Name="nReportID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nCompanyID" Type="Int32" Nullable="false" />
+          <Property Name="nQuarter" Type="Int32" Nullable="false" />
+          <Property Name="nYear" Type="Int32" Nullable="false" />
+          <Property Name="sFilename" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="sSysFileName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="sPath" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="nStatusID" Type="Int32" Nullable="false" />
+          <Property Name="nL1" Type="Int32" />
+          <Property Name="nL2" Type="Int32" />
+          <Property Name="IsDel" Type="Boolean" Nullable="false" />
+          <Property Name="nCreateBy" Type="Int32" Nullable="false" />
+          <Property Name="dCreate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="nUpdateBy" Type="Int32" Nullable="false" />
+          <Property Name="dUpdate" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="T_ReportDJSI_Approve">
+          <Key>
+            <PropertyRef Name="nID" />
+          </Key>
+          <Property Name="nID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nReportID" Type="Int32" Nullable="false" />
+          <Property Name="nStatusID" Type="Int32" />
+          <Property Name="sComment" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="nActionBy" Type="Int32" />
+          <Property Name="dAction" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="T_ReportDJSI_Item">
+          <Key>
+            <PropertyRef Name="nReportID" />
+            <PropertyRef Name="nItem" />
+          </Key>
+          <Property Name="nReportID" Type="Int32" Nullable="false" />
+          <Property Name="nItem" Type="Int32" Nullable="false" />
+          <Property Name="nMale_1" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="nMale_2" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="nMale_3" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="nFemale_1" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="nFemale_2" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="nFemale_3" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="nMale_Total" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="nFemale_Total" Type="Decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="TB_Company">
+          <Key>
+            <PropertyRef Name="nCompanyID" />
+          </Key>
+          <Property Name="nCompanyID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nCompanyType" Type="Int32" Nullable="false" />
+          <Property Name="sCompanyCode" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="sCompanyName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="sCompanyAbbr" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="IsSync" Type="Boolean" />
+          <Property Name="IsDel" Type="Boolean" Nullable="false" />
+          <Property Name="nCreateBy" Type="Int32" Nullable="false" />
+          <Property Name="dCreate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="nUpdateBy" Type="Int32" Nullable="false" />
+          <Property Name="dUpdate" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="TB_Company_DJSI">
+          <Key>
+            <PropertyRef Name="nCompanyID" />
+            <PropertyRef Name="nItem" />
+          </Key>
+          <Property Name="nCompanyID" Type="Int32" Nullable="false" />
+          <Property Name="nItem" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TB_Sync">
+          <Key>
+            <PropertyRef Name="nID" />
+          </Key>
+          <Property Name="nID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="sSysFileName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="sPath" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="nCreateBy" Type="Int32" Nullable="false" />
+          <Property Name="dCreate" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="TB_Sync_Item">
+          <Key>
+            <PropertyRef Name="nID" />
+            <PropertyRef Name="nCompanyID" />
+            <PropertyRef Name="dDate" />
+            <PropertyRef Name="nItem" />
+          </Key>
+          <Property Name="nID" Type="Int32" Nullable="false" />
+          <Property Name="nCompanyID" Type="Int32" Nullable="false" />
+          <Property Name="dDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="nItem" Type="Int32" Nullable="false" />
+          <Property Name="nMale" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="nFemale" Type="Decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="TB_User">
+          <Key>
+            <PropertyRef Name="nUserID" />
+          </Key>
+          <Property Name="nUserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="sUserID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="sPassword" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="sPasswordEncrypt" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="sFirstname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="sLastname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="sEmail" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="nCompanyType" Type="Int32" Nullable="false" />
+          <Property Name="nRole" Type="Int32" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="IsDel" Type="Boolean" Nullable="false" />
+          <Property Name="nCreateBy" Type="Int32" Nullable="false" />
+          <Property Name="dCreate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="nUpdateBy" Type="Int32" Nullable="false" />
+          <Property Name="dUpdate" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="TB_User_Company">
+          <Key>
+            <PropertyRef Name="nUserID" />
+            <PropertyRef Name="nCompanyID" />
+          </Key>
+          <Property Name="nUserID" Type="Int32" Nullable="false" />
+          <Property Name="nCompanyID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TB_User_Permission">
+          <Key>
+            <PropertyRef Name="nUserID" />
+            <PropertyRef Name="nMenuID" />
+          </Key>
+          <Property Name="nUserID" Type="Int32" Nullable="false" />
+          <Property Name="nMenuID" Type="Int32" Nullable="false" />
+          <Property Name="nPermission" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TM_DJSI">
+          <Key>
+            <PropertyRef Name="nItem" />
+          </Key>
+          <Property Name="nItem" Type="Int32" Nullable="false" />
+          <Property Name="sName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="nItemHead" Type="Int32" />
+          <Property Name="nSibling" Type="Int32" />
+          <Property Name="IsTotal" Type="Boolean" />
+          <Property Name="nUnit" Type="Int32" />
+          <Property Name="IsHead" Type="Boolean" />
+          <Property Name="IsAutoCal" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="TM_Log">
+          <Key>
+            <PropertyRef Name="nLogID" />
+          </Key>
+          <Property Name="nLogID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="dLog" Type="DateTime" Precision="3" />
+          <Property Name="nUserID" Type="Int32" />
+          <Property Name="nMenuID" Type="Int32" />
+          <Property Name="sMenuName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="sEvent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TM_Log_SyncDJSI">
+          <Key>
+            <PropertyRef Name="nLogID" />
+          </Key>
+          <Property Name="nLogID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="dLog" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="sEvent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TM_LogMail">
+          <Key>
+            <PropertyRef Name="nID" />
+          </Key>
+          <Property Name="nID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="sTo" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="sCc" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="sSubject" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="sMessage" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="IsSend" Type="Boolean" />
+          <Property Name="sMessage_Error" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="dSend" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="TM_MasterData">
+          <Key>
+            <PropertyRef Name="nMainID" />
+          </Key>
+          <Property Name="nMainID" Type="Int32" Nullable="false" />
+          <Property Name="sName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="sDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IsManage" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TM_MasterData_Sub">
+          <Key>
+            <PropertyRef Name="nSubID" />
+          </Key>
+          <Property Name="nSubID" Type="Int32" Nullable="false" />
+          <Property Name="nMainID" Type="Int32" Nullable="false" />
+          <Property Name="sName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="sDescription" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="nOrder" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="IsDel" Type="Boolean" Nullable="false" />
+          <Property Name="nCreateBy" Type="Int32" />
+          <Property Name="dCreate" Type="DateTime" Precision="3" />
+          <Property Name="nUpdateBy" Type="Int32" />
+          <Property Name="dUpdate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="TM_Menu">
+          <Key>
+            <PropertyRef Name="nMenuID" />
+          </Key>
+          <Property Name="nMenuID" Type="Int32" Nullable="false" />
+          <Property Name="sMenuName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="nMenuHead" Type="Int32" />
+          <Property Name="nLevel" Type="Int32" />
+          <Property Name="sMenuLink" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="sIcon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="nMenuOrder" Type="Int32" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TM_WFStatus">
+          <Key>
+            <PropertyRef Name="nStatusID" />
+          </Key>
+          <Property Name="nStatusID" Type="Int32" Nullable="false" />
+          <Property Name="sStatusName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="sStatusNameAbbr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="sDescription" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="nLevel" Type="Int32" Nullable="false" />
+          <Property Name="sColor" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PTTGC_HumanStoreContainer" CdmEntityContainer="PTTGC_HumanEntities">
+          <EntitySetMapping Name="T_Course">
+            <EntityTypeMapping TypeName="PTTGC_Human.T_Course">
+              <MappingFragment StoreEntitySet="T_Course">
+                <ScalarProperty Name="dUpdate" ColumnName="dUpdate" />
+                <ScalarProperty Name="nUpdateBy" ColumnName="nUpdateBy" />
+                <ScalarProperty Name="dCreate" ColumnName="dCreate" />
+                <ScalarProperty Name="nCreateBy" ColumnName="nCreateBy" />
+                <ScalarProperty Name="IsDel" ColumnName="IsDel" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="nCategoryID" ColumnName="nCategoryID" />
+                <ScalarProperty Name="sDescription" ColumnName="sDescription" />
+                <ScalarProperty Name="sName" ColumnName="sName" />
+                <ScalarProperty Name="nCompanyID" ColumnName="nCompanyID" />
+                <ScalarProperty Name="nCourseID" ColumnName="nCourseID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_Course_Sub">
+            <EntityTypeMapping TypeName="PTTGC_Human.T_Course_Sub">
+              <MappingFragment StoreEntitySet="T_Course_Sub">
+                <ScalarProperty Name="dUpdate" ColumnName="dUpdate" />
+                <ScalarProperty Name="nUpdateBy" ColumnName="nUpdateBy" />
+                <ScalarProperty Name="dCreate" ColumnName="dCreate" />
+                <ScalarProperty Name="nCreateBy" ColumnName="nCreateBy" />
+                <ScalarProperty Name="IsDel" ColumnName="IsDel" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="nAmount" ColumnName="nAmount" />
+                <ScalarProperty Name="nPrice" ColumnName="nPrice" />
+                <ScalarProperty Name="nTraining_method" ColumnName="nTraining_method" />
+                <ScalarProperty Name="tEnd" ColumnName="tEnd" />
+                <ScalarProperty Name="tStart" ColumnName="tStart" />
+                <ScalarProperty Name="dEnd" ColumnName="dEnd" />
+                <ScalarProperty Name="dStart" ColumnName="dStart" />
+                <ScalarProperty Name="sDescription" ColumnName="sDescription" />
+                <ScalarProperty Name="sName" ColumnName="sName" />
+                <ScalarProperty Name="nCompanyID" ColumnName="nCompanyID" />
+                <ScalarProperty Name="nCourseID" ColumnName="nCourseID" />
+                <ScalarProperty Name="nCourseSubID" ColumnName="nCourseSubID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_Course_Sub_TG">
+            <EntityTypeMapping TypeName="PTTGC_Human.T_Course_Sub_TG">
+              <MappingFragment StoreEntitySet="T_Course_Sub_TG">
+                <ScalarProperty Name="nTargetGroup" ColumnName="nTargetGroup" />
+                <ScalarProperty Name="nCourseSubID" ColumnName="nCourseSubID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_Project">
+            <EntityTypeMapping TypeName="PTTGC_Human.T_Project">
+              <MappingFragment StoreEntitySet="T_Project">
+                <ScalarProperty Name="dUpdate" ColumnName="dUpdate" />
+                <ScalarProperty Name="nUpdateBy" ColumnName="nUpdateBy" />
+                <ScalarProperty Name="dCreate" ColumnName="dCreate" />
+                <ScalarProperty Name="nCreateBy" ColumnName="nCreateBy" />
+                <ScalarProperty Name="IsDel" ColumnName="IsDel" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="nCourse" ColumnName="nCourse" />
+                <ScalarProperty Name="dEnd" ColumnName="dEnd" />
+                <ScalarProperty Name="dStart" ColumnName="dStart" />
+                <ScalarProperty Name="sDescription" ColumnName="sDescription" />
+                <ScalarProperty Name="nPrice_Capex" ColumnName="nPrice_Capex" />
+                <ScalarProperty Name="nPrice_Opex" ColumnName="nPrice_Opex" />
+                <ScalarProperty Name="nReturn_Other" ColumnName="nReturn_Other" />
+                <ScalarProperty Name="nReturn_Social" ColumnName="nReturn_Social" />
+                <ScalarProperty Name="nReturn_Environment" ColumnName="nReturn_Environment" />
+                <ScalarProperty Name="nReturn_Economy" ColumnName="nReturn_Economy" />
+                <ScalarProperty Name="nProductivity" ColumnName="nProductivity" />
+                <ScalarProperty Name="sObjective" ColumnName="sObjective" />
+                <ScalarProperty Name="sOrganization" ColumnName="sOrganization" />
+                <ScalarProperty Name="sProjectName" ColumnName="sProjectName" />
+                <ScalarProperty Name="nCompanyID" ColumnName="nCompanyID" />
+                <ScalarProperty Name="nProjectID" ColumnName="nProjectID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_Project_Course">
+            <EntityTypeMapping TypeName="PTTGC_Human.T_Project_Course">
+              <MappingFragment StoreEntitySet="T_Project_Course">
+                <ScalarProperty Name="nBenefit" ColumnName="nBenefit" />
+                <ScalarProperty Name="nCourseSubID" ColumnName="nCourseSubID" />
+                <ScalarProperty Name="nProjectID" ColumnName="nProjectID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_Report_File">
+            <EntityTypeMapping TypeName="PTTGC_Human.T_Report_File">
+              <MappingFragment StoreEntitySet="T_Report_File">
+                <ScalarProperty Name="sDescription" ColumnName="sDescription" />
+                <ScalarProperty Name="sPath" ColumnName="sPath" />
+                <ScalarProperty Name="sSysFileName" ColumnName="sSysFileName" />
+                <ScalarProperty Name="sFilename" ColumnName="sFilename" />
+                <ScalarProperty Name="nItem" ColumnName="nItem" />
+                <ScalarProperty Name="nReportID" ColumnName="nReportID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_Report_Year">
+            <EntityTypeMapping TypeName="PTTGC_Human.T_Report_Year">
+              <MappingFragment StoreEntitySet="T_Report_Year">
+                <ScalarProperty Name="dUpdate" ColumnName="dUpdate" />
+                <ScalarProperty Name="nYear" ColumnName="nYear" />
+                <ScalarProperty Name="nCompanyID" ColumnName="nCompanyID" />
+                <ScalarProperty Name="nReportID" ColumnName="nReportID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_Report_Year_Item">
+            <EntityTypeMapping TypeName="PTTGC_Human.T_Report_Year_Item">
+              <MappingFragment StoreEntitySet="T_Report_Year_Item">
+                <ScalarProperty Name="nFemale" ColumnName="nFemale" />
+                <ScalarProperty Name="nMale" ColumnName="nMale" />
+                <ScalarProperty Name="nItem" ColumnName="nItem" />
+                <ScalarProperty Name="nReportID" ColumnName="nReportID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_ReportDJSI">
+            <EntityTypeMapping TypeName="PTTGC_Human.T_ReportDJSI">
+              <MappingFragment StoreEntitySet="T_ReportDJSI">
+                <ScalarProperty Name="dUpdate" ColumnName="dUpdate" />
+                <ScalarProperty Name="nUpdateBy" ColumnName="nUpdateBy" />
+                <ScalarProperty Name="dCreate" ColumnName="dCreate" />
+                <ScalarProperty Name="nCreateBy" ColumnName="nCreateBy" />
+                <ScalarProperty Name="IsDel" ColumnName="IsDel" />
+                <ScalarProperty Name="nL2" ColumnName="nL2" />
+                <ScalarProperty Name="nL1" ColumnName="nL1" />
+                <ScalarProperty Name="nStatusID" ColumnName="nStatusID" />
+                <ScalarProperty Name="sPath" ColumnName="sPath" />
+                <ScalarProperty Name="sSysFileName" ColumnName="sSysFileName" />
+                <ScalarProperty Name="sFilename" ColumnName="sFilename" />
+                <ScalarProperty Name="nYear" ColumnName="nYear" />
+                <ScalarProperty Name="nQuarter" ColumnName="nQuarter" />
+                <ScalarProperty Name="nCompanyID" ColumnName="nCompanyID" />
+                <ScalarProperty Name="nReportID" ColumnName="nReportID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_ReportDJSI_Approve">
+            <EntityTypeMapping TypeName="PTTGC_Human.T_ReportDJSI_Approve">
+              <MappingFragment StoreEntitySet="T_ReportDJSI_Approve">
+                <ScalarProperty Name="dAction" ColumnName="dAction" />
+                <ScalarProperty Name="nActionBy" ColumnName="nActionBy" />
+                <ScalarProperty Name="sComment" ColumnName="sComment" />
+                <ScalarProperty Name="nStatusID" ColumnName="nStatusID" />
+                <ScalarProperty Name="nReportID" ColumnName="nReportID" />
+                <ScalarProperty Name="nID" ColumnName="nID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_ReportDJSI_Item">
+            <EntityTypeMapping TypeName="PTTGC_Human.T_ReportDJSI_Item">
+              <MappingFragment StoreEntitySet="T_ReportDJSI_Item">
+                <ScalarProperty Name="nFemale_Total" ColumnName="nFemale_Total" />
+                <ScalarProperty Name="nMale_Total" ColumnName="nMale_Total" />
+                <ScalarProperty Name="nFemale_3" ColumnName="nFemale_3" />
+                <ScalarProperty Name="nFemale_2" ColumnName="nFemale_2" />
+                <ScalarProperty Name="nFemale_1" ColumnName="nFemale_1" />
+                <ScalarProperty Name="nMale_3" ColumnName="nMale_3" />
+                <ScalarProperty Name="nMale_2" ColumnName="nMale_2" />
+                <ScalarProperty Name="nMale_1" ColumnName="nMale_1" />
+                <ScalarProperty Name="nItem" ColumnName="nItem" />
+                <ScalarProperty Name="nReportID" ColumnName="nReportID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_Company">
+            <EntityTypeMapping TypeName="PTTGC_Human.TB_Company">
+              <MappingFragment StoreEntitySet="TB_Company">
+                <ScalarProperty Name="dUpdate" ColumnName="dUpdate" />
+                <ScalarProperty Name="nUpdateBy" ColumnName="nUpdateBy" />
+                <ScalarProperty Name="dCreate" ColumnName="dCreate" />
+                <ScalarProperty Name="nCreateBy" ColumnName="nCreateBy" />
+                <ScalarProperty Name="IsDel" ColumnName="IsDel" />
+                <ScalarProperty Name="IsSync" ColumnName="IsSync" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="sCompanyAbbr" ColumnName="sCompanyAbbr" />
+                <ScalarProperty Name="sCompanyName" ColumnName="sCompanyName" />
+                <ScalarProperty Name="sCompanyCode" ColumnName="sCompanyCode" />
+                <ScalarProperty Name="nCompanyType" ColumnName="nCompanyType" />
+                <ScalarProperty Name="nCompanyID" ColumnName="nCompanyID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_Company_DJSI">
+            <EntityTypeMapping TypeName="PTTGC_Human.TB_Company_DJSI">
+              <MappingFragment StoreEntitySet="TB_Company_DJSI">
+                <ScalarProperty Name="nItem" ColumnName="nItem" />
+                <ScalarProperty Name="nCompanyID" ColumnName="nCompanyID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_Sync">
+            <EntityTypeMapping TypeName="PTTGC_Human.TB_Sync">
+              <MappingFragment StoreEntitySet="TB_Sync">
+                <ScalarProperty Name="dCreate" ColumnName="dCreate" />
+                <ScalarProperty Name="nCreateBy" ColumnName="nCreateBy" />
+                <ScalarProperty Name="sPath" ColumnName="sPath" />
+                <ScalarProperty Name="sSysFileName" ColumnName="sSysFileName" />
+                <ScalarProperty Name="nID" ColumnName="nID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_Sync_Item">
+            <EntityTypeMapping TypeName="PTTGC_Human.TB_Sync_Item">
+              <MappingFragment StoreEntitySet="TB_Sync_Item">
+                <ScalarProperty Name="nFemale" ColumnName="nFemale" />
+                <ScalarProperty Name="nMale" ColumnName="nMale" />
+                <ScalarProperty Name="nItem" ColumnName="nItem" />
+                <ScalarProperty Name="dDate" ColumnName="dDate" />
+                <ScalarProperty Name="nCompanyID" ColumnName="nCompanyID" />
+                <ScalarProperty Name="nID" ColumnName="nID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_User">
+            <EntityTypeMapping TypeName="PTTGC_Human.TB_User">
+              <MappingFragment StoreEntitySet="TB_User">
+                <ScalarProperty Name="dUpdate" ColumnName="dUpdate" />
+                <ScalarProperty Name="nUpdateBy" ColumnName="nUpdateBy" />
+                <ScalarProperty Name="dCreate" ColumnName="dCreate" />
+                <ScalarProperty Name="nCreateBy" ColumnName="nCreateBy" />
+                <ScalarProperty Name="IsDel" ColumnName="IsDel" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="nRole" ColumnName="nRole" />
+                <ScalarProperty Name="nCompanyType" ColumnName="nCompanyType" />
+                <ScalarProperty Name="sEmail" ColumnName="sEmail" />
+                <ScalarProperty Name="sLastname" ColumnName="sLastname" />
+                <ScalarProperty Name="sFirstname" ColumnName="sFirstname" />
+                <ScalarProperty Name="sPasswordEncrypt" ColumnName="sPasswordEncrypt" />
+                <ScalarProperty Name="sPassword" ColumnName="sPassword" />
+                <ScalarProperty Name="sUserID" ColumnName="sUserID" />
+                <ScalarProperty Name="nUserID" ColumnName="nUserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_User_Company">
+            <EntityTypeMapping TypeName="PTTGC_Human.TB_User_Company">
+              <MappingFragment StoreEntitySet="TB_User_Company">
+                <ScalarProperty Name="nCompanyID" ColumnName="nCompanyID" />
+                <ScalarProperty Name="nUserID" ColumnName="nUserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_User_Permission">
+            <EntityTypeMapping TypeName="PTTGC_Human.TB_User_Permission">
+              <MappingFragment StoreEntitySet="TB_User_Permission">
+                <ScalarProperty Name="nPermission" ColumnName="nPermission" />
+                <ScalarProperty Name="nMenuID" ColumnName="nMenuID" />
+                <ScalarProperty Name="nUserID" ColumnName="nUserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TM_DJSI">
+            <EntityTypeMapping TypeName="PTTGC_Human.TM_DJSI">
+              <MappingFragment StoreEntitySet="TM_DJSI">
+                <ScalarProperty Name="IsAutoCal" ColumnName="IsAutoCal" />
+                <ScalarProperty Name="IsHead" ColumnName="IsHead" />
+                <ScalarProperty Name="nUnit" ColumnName="nUnit" />
+                <ScalarProperty Name="IsTotal" ColumnName="IsTotal" />
+                <ScalarProperty Name="nSibling" ColumnName="nSibling" />
+                <ScalarProperty Name="nItemHead" ColumnName="nItemHead" />
+                <ScalarProperty Name="sName" ColumnName="sName" />
+                <ScalarProperty Name="nItem" ColumnName="nItem" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TM_Log">
+            <EntityTypeMapping TypeName="PTTGC_Human.TM_Log">
+              <MappingFragment StoreEntitySet="TM_Log">
+                <ScalarProperty Name="sEvent" ColumnName="sEvent" />
+                <ScalarProperty Name="sMenuName" ColumnName="sMenuName" />
+                <ScalarProperty Name="nMenuID" ColumnName="nMenuID" />
+                <ScalarProperty Name="nUserID" ColumnName="nUserID" />
+                <ScalarProperty Name="dLog" ColumnName="dLog" />
+                <ScalarProperty Name="nLogID" ColumnName="nLogID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TM_Log_SyncDJSI">
+            <EntityTypeMapping TypeName="PTTGC_Human.TM_Log_SyncDJSI">
+              <MappingFragment StoreEntitySet="TM_Log_SyncDJSI">
+                <ScalarProperty Name="sEvent" ColumnName="sEvent" />
+                <ScalarProperty Name="dLog" ColumnName="dLog" />
+                <ScalarProperty Name="nLogID" ColumnName="nLogID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TM_LogMail">
+            <EntityTypeMapping TypeName="PTTGC_Human.TM_LogMail">
+              <MappingFragment StoreEntitySet="TM_LogMail">
+                <ScalarProperty Name="dSend" ColumnName="dSend" />
+                <ScalarProperty Name="sMessage_Error" ColumnName="sMessage_Error" />
+                <ScalarProperty Name="IsSend" ColumnName="IsSend" />
+                <ScalarProperty Name="sMessage" ColumnName="sMessage" />
+                <ScalarProperty Name="sSubject" ColumnName="sSubject" />
+                <ScalarProperty Name="sCc" ColumnName="sCc" />
+                <ScalarProperty Name="sTo" ColumnName="sTo" />
+                <ScalarProperty Name="nID" ColumnName="nID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TM_MasterData">
+            <EntityTypeMapping TypeName="PTTGC_Human.TM_MasterData">
+              <MappingFragment StoreEntitySet="TM_MasterData">
+                <ScalarProperty Name="IsManage" ColumnName="IsManage" />
+                <ScalarProperty Name="sDescription" ColumnName="sDescription" />
+                <ScalarProperty Name="sName" ColumnName="sName" />
+                <ScalarProperty Name="nMainID" ColumnName="nMainID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TM_MasterData_Sub">
+            <EntityTypeMapping TypeName="PTTGC_Human.TM_MasterData_Sub">
+              <MappingFragment StoreEntitySet="TM_MasterData_Sub">
+                <ScalarProperty Name="dUpdate" ColumnName="dUpdate" />
+                <ScalarProperty Name="nUpdateBy" ColumnName="nUpdateBy" />
+                <ScalarProperty Name="dCreate" ColumnName="dCreate" />
+                <ScalarProperty Name="nCreateBy" ColumnName="nCreateBy" />
+                <ScalarProperty Name="IsDel" ColumnName="IsDel" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="nOrder" ColumnName="nOrder" />
+                <ScalarProperty Name="sDescription" ColumnName="sDescription" />
+                <ScalarProperty Name="sName" ColumnName="sName" />
+                <ScalarProperty Name="nMainID" ColumnName="nMainID" />
+                <ScalarProperty Name="nSubID" ColumnName="nSubID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TM_Menu">
+            <EntityTypeMapping TypeName="PTTGC_Human.TM_Menu">
+              <MappingFragment StoreEntitySet="TM_Menu">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="nMenuOrder" ColumnName="nMenuOrder" />
+                <ScalarProperty Name="sIcon" ColumnName="sIcon" />
+                <ScalarProperty Name="sMenuLink" ColumnName="sMenuLink" />
+                <ScalarProperty Name="nLevel" ColumnName="nLevel" />
+                <ScalarProperty Name="nMenuHead" ColumnName="nMenuHead" />
+                <ScalarProperty Name="sMenuName" ColumnName="sMenuName" />
+                <ScalarProperty Name="nMenuID" ColumnName="nMenuID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TM_WFStatus">
+            <EntityTypeMapping TypeName="PTTGC_Human.TM_WFStatus">
+              <MappingFragment StoreEntitySet="TM_WFStatus">
+                <ScalarProperty Name="sColor" ColumnName="sColor" />
+                <ScalarProperty Name="nLevel" ColumnName="nLevel" />
+                <ScalarProperty Name="sDescription" ColumnName="sDescription" />
+                <ScalarProperty Name="sStatusNameAbbr" ColumnName="sStatusNameAbbr" />
+                <ScalarProperty Name="sStatusName" ColumnName="sStatusName" />
+                <ScalarProperty Name="nStatusID" ColumnName="nStatusID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

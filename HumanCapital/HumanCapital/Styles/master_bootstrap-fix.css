@@ -1,0 +1,255 @@
+﻿@-ms-viewport {
+    width: auto !important;
+}
+
+.form-control[readonly] {
+    cursor: auto;
+    background-color: #FFF;
+}
+
+    .form-control[readonly]:disabled {
+        cursor: not-allowed;
+        background-color: #EEE;
+    }
+
+.form-group-sm .form-label, .form-group-sm .checkbox, .form-group-sm .radio, .form-group-sm .help-block {
+    font-size: 12px;
+}
+
+.form-group-sm .input-group-addon, .form-group-sm .input-group-btn > .btn {
+    height: 30px;
+    padding: 5px 10px;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.form-horizontal .checkbox, .form-horizontal .radio {
+    min-height: initial;
+}
+
+.input-group-addon input[type=checkbox],
+.input-group-addon input[type=radio] {
+    margin: 4px 0 0;
+}
+
+.table {
+    margin-bottom: 0;
+}
+
+.table-responsive {
+    margin-bottom: 0;
+}
+
+    .table-responsive > .alert {
+        margin-bottom: 0;
+    }
+
+a:focus {
+    outline: none;
+}
+
+.pagination {
+    margin: 0;
+}
+
+.checkbox-inline ~ .form-control-feedback,
+.radio-inline ~ .form-control-feedback {
+    margin-left: 15px;
+}
+
+.input-group-addon > .checkbox label::after {
+    padding-left: 1px;
+    padding-top: 3px;
+}
+
+.text-left-not-xs, .text-left-not-sm, .text-left-not-md, .text-left-not-lg {
+    text-align: left;
+}
+
+.text-center-not-xs, .text-center-not-sm, .text-center-not-md, .text-center-not-lg {
+    text-align: center;
+}
+
+.text-right-not-xs, .text-right-not-sm, .text-right-not-md, .text-right-not-lg {
+    text-align: right;
+}
+
+.text-justify-not-xs, .text-justify-not-sm, .text-justify-not-md, .text-justify-not-lg {
+    text-align: justify;
+}
+
+@media (max-width: 767px) {
+    .text-left-not-xs, .text-center-not-xs, .text-right-not-xs, .text-justify-not-xs {
+        text-align: inherit;
+    }
+
+    .text-left-xs {
+        text-align: left;
+    }
+
+    .text-center-xs {
+        text-align: center;
+    }
+
+    .text-right-xs {
+        text-align: right;
+    }
+
+    .text-justify-xs {
+        text-align: justify;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .text-left-not-sm, .text-center-not-sm, .text-right-not-sm, .text-justify-not-sm {
+        text-align: inherit;
+    }
+
+    .text-left-sm {
+        text-align: left;
+    }
+
+    .text-center-sm {
+        text-align: center;
+    }
+
+    .text-right-sm {
+        text-align: right;
+    }
+
+    .text-justify-sm {
+        text-align: justify;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .text-left-not-md, .text-center-not-md, .text-right-not-md, .text-justify-not-md {
+        text-align: inherit;
+    }
+
+    .text-left-md {
+        text-align: left;
+    }
+
+    .text-center-md {
+        text-align: center;
+    }
+
+    .text-right-md {
+        text-align: right;
+    }
+
+    .text-justify-md {
+        text-align: justify;
+    }
+}
+
+@media (min-width: 1200px) {
+    .text-left-not-lg, .text-center-not-lg, .text-right-not-lg, .text-justify-not-lg {
+        text-align: inherit;
+    }
+
+    .text-left-lg {
+        text-align: left;
+    }
+
+    .text-center-lg {
+        text-align: center;
+    }
+
+    .text-right-lg {
+        text-align: right;
+    }
+
+    .text-justify-lg {
+        text-align: justify;
+    }
+}
+
+.checkbox.checkbox-notext label, .radio.radio-notext label, .checkbox label:empty, .radio label:empty {
+    padding: 0;
+}
+
+    .checkbox.checkbox-notext label:before, .checkbox.checkbox-notext label:after,
+    .radio.radio-notext label:before, .radio.radio-notext label:after,
+    .checkbox label:empty:before, .checkbox label:empty:after,
+    .radio label:empty:before, .radio label:empty:after {
+        margin-left: -17px;
+    }
+
+.datepicker.dropdown-menu {
+    border-radius: 0;
+}
+
+.datepicker-dropdown:before {
+    top: 0;
+    margin-top: -7px;
+}
+
+.datepicker-dropdown:after {
+    top: 0;
+    margin-top: -6px;
+}
+
+.modal-dialog {
+    position: absolute;
+    margin: 0;
+    top: 50%;
+    left: 50%;
+}
+
+.modal.fade .modal-dialog {
+    -webkit-transition: -webkit-transform .3s ease-out;
+    -o-transition: -o-transform .3s ease-out;
+    transition: transform .3s ease-out;
+    -webkit-transform: translate(-50%,-75%);
+    -ms-transform: translate(-50%,-75%);
+    -o-transform: translate(-50%,-75%);
+    transform: translate(-50%,-75%);
+}
+
+.modal.in .modal-dialog {
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+
+.modal-footer {
+    padding: 15px 20px;
+}
+
+.checkbox-inline, .radio-inline {
+    cursor: default;
+}
+
+    .checkbox-inline + .checkbox-inline, .radio-inline + .radio-inline {
+        margin-left: 0;
+    }
+
+    .checkbox-inline:not(:last-child), .radio-inline:not(:last-child) {
+        margin-right: 10px;
+    }
+
+.panel {
+    margin-bottom: 0;
+}
+
+.tab-content {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-top: 0;
+    padding: 10px 15px;
+}
+
+.alert {
+    margin-bottom: 0;
+}
+
+.btn-link:hover, .btn-link:focus {
+    text-decoration: none;
+}
+
+.nav-tabs > li > a {
+    margin-right: 0;
+}

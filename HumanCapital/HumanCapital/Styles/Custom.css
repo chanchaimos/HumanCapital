@@ -1,0 +1,120 @@
+﻿.container {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
+a {
+    cursor: pointer;
+}
+
+    a.aMenu, a.aMenu:hover {
+        cursor: pointer;
+        color: #383939 !important;
+        text-decoration: none;
+    }
+
+.bg-info1 {
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+}
+
+div.modal-header-info {
+    background-color: #5bc0de;
+    border-color: #5bc0de;
+    color: #ffffff;
+}
+
+
+.modal-content {
+    margin-top: 10% !important;
+}
+
+/*.checkbox label {
+    vertical-align: top !important;
+}*/
+
+span.checkbox > label {
+    margin-bottom: 0 !important;
+}
+
+.text-orange {
+    color: #FF9800;
+}
+
+/*#region Collap */
+
+.collapHead > .card-header {
+    cursor: pointer !important;
+}
+
+.collapHead .collap[aria-expanded=false] span:before {
+    font-family: 'Glyphicons Halflings';
+    content: "\e114";
+    float: right;
+    transition: all .5s;
+}
+
+.collapHead .collap[aria-expanded=true] span:before {
+    font-family: 'Glyphicons Halflings';
+    content: "\e114";
+    float: right;
+    transition: all .5s;
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+/*#endregion */
+
+/*Multiselect*/
+.filter-option {
+    border: 1px solid #ced4da !important;
+    border-radius: .25rem !important;
+    color: #495057 !important;
+    /*background: white !important;*/
+}
+
+/*radio*/
+.radio {
+    padding-left: 8px !important;
+}
+
+/*checkbox*/
+.checkbox {
+    padding-left: 0px !important;
+}
+
+    .checkbox label::before {
+        left: -2px !important;
+        margin-left: -12px !important;
+    }
+
+    .checkbox label::after, .radio label::after {
+        margin-left: -12px !important;
+    }
+
+.radio label {
+    padding-left: 10px !important;
+}
+
+    .radio label::before {
+        left: 0px !important;
+        margin-left: -12px !important;
+    }
+
+.table {
+    margin-bottom: 0;
+}
+
+.dataNotFound {
+    color: #1b1464 !important;
+    text-align: center !important;
+    background-color: #f9f9f9 !important;
+    height: 80px !important;
+    padding: 30px !important;
+    border: 1px solid #adb5be !important;
+}
+
+.btn-sm {
+    height: 31px !important;
+}

@@ -1,0 +1,28 @@
+@font-face {
+    font-family: 'Prompt';
+    src: url('prompt-extralight-webfont.woff2') format('woff2'), url('prompt-extralight-webfont.woff') format('woff');
+    font-weight: 300;
+}
+@font-face {
+    font-family: 'Prompt';
+    src: url('prompt-light-webfont.woff2') format('woff2'), url('prompt-light-webfont.woff') format('woff');
+    font-weight: 400;
+}
+@font-face {
+    font-family: 'Prompt';
+    src: url('prompt-medium-webfont.woff2') format('woff2'), url('prompt-medium-webfont.woff') format('woff');
+    font-weight: 500;
+}
+@font-face {
+    font-family: 'Prompt';
+    src: url('prompt-bold-webfont.woff2') format('woff2'), url('prompt-bold-webfont.woff') format('woff');
+    font-weight: 700;
+}
+@font-face {
+    font-family: 'Prompt';
+    src: url('prompt-extrabold-webfont.woff2') format('woff2'), url('prompt-extrabold-webfont.woff') format('woff');
+    font-weight: 900;
+}
+.Prompt {
+    font-family: Prompt;
+}

@@ -1,0 +1,24 @@
+﻿@font-face {
+    font-family: 'Sukhumvit';
+    src: url(sukhumvitset-light-02-webfont.woff2) format("woff2"),url(sukhumvitset-light-02-webfont.woff) format("woff"),url(sukhumvitset-light-02-webfont.ttf) format("truetype");
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Sukhumvit';
+    src: url(sukhumvitset-text-03-webfont.woff2) format("woff2"),url(sukhumvitset-text-03-webfont.woff) format("woff"),url(sukhumvitset-text-03-webfont.ttf) format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Sukhumvit';
+    src: url(sukhumvitset-bold-06-webfont.woff2) format("woff2"),url(sukhumvitset-bold-06-webfont.woff) format("woff"),url(sukhumvitset-bold-06-webfont.ttf) format("truetype");
+    font-weight: bold;
+    font-style: normal;
+}
+
+.Sukhumvit {
+    font-family: 'Sukhumvit';
+}
